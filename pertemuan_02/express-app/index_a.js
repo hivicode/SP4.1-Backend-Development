@@ -6,7 +6,7 @@ const app = express();
 
 // basic route
 app.get('/', (req, res) => {
-  res.send('ppppppppppp');
+  res.send('perumahan');
 });
 
 // listen on port
