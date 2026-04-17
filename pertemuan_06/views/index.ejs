@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>CRUD DATA MAHASISWA STIKOM</h1>
+
+    <% if (alert && alert.message && alert.message.length) { %>
+      <p><%= alert.message[0] %></p>
+    <% } %>
+
+    <table border='1' cellpadding='8' cellspacing='0'>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Nama</th>
+          <th>NIM</th>
+          <th>Jurusan</th>
+          <th>Alamat</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (mahasiswa && mahasiswa.length) { %>
+          <% mahasiswa.forEach(function(item, index) { %>
+            <tr>
+              <td><%= index + 1 %></td>
+              <td><%= item.nama %></td>
+              <td><%= item.nim %></td>
+              <td><%= item.jurusan %></td>
+              <td><%= item.alamat %></td>
+            </tr>
+          <% }) %>
+        <% } else { %>
+          <tr>
+            <td colspan='5'>Belum ada data mahasiswa</td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </body>
+</html>
